@@ -6,4 +6,4 @@ edition = "2024"
 [dependencies]
 riscv-rt = { git = "https://github.com/rust-embedded/riscv", branch = "master"}
 panic-halt = "1.0.0"
-semihosting = { version = "0.1", features = ["stdio", "panic-handler"] }
+riscv-semihosting = "0.1.2"

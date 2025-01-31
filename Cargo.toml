@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-riscv-rt = { git = "https://github.com/rust-embedded/riscv", branch = "master"}
+riscv = { git = "https://github.com/rust-embedded/riscv", branch = "rvrt-patch", features = ["critical-section-single-hart"] }
+riscv-rt = { git = "https://github.com/rust-embedded/riscv", branch = "rvrt-patch"}
+riscv-semihosting = {version = "0.1.2"}
 panic-halt = "1.0.0"
-riscv-semihosting = "0.1.2"

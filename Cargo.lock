@@ -46,6 +46,18 @@ dependencies = [
 
 [[package]]
 name = "riscv"
+version = "0.12.0"
+source = "git+https://github.com/rust-embedded/riscv?branch=rvrt-patch#f16c833daf7074962db7f9e8070b4176b15f51c9"
+dependencies = [
+ "critical-section",
+ "embedded-hal",
+ "paste",
+ "riscv-macros 0.1.0 (git+https://github.com/rust-embedded/riscv?branch=rvrt-patch)",
+ "riscv-pac 0.2.0 (git+https://github.com/rust-embedded/riscv?branch=rvrt-patch)",
+]
+
+[[package]]
+name = "riscv"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5ea8ff73d3720bdd0a97925f0bf79ad2744b6da8ff36be3840c48ac81191d7a7"
@@ -55,18 +67,6 @@ dependencies = [
  "paste",
  "riscv-macros 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "riscv-pac 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "riscv"
-version = "0.12.1"
-source = "git+https://github.com/rust-embedded/riscv?branch=master#f92d7871f9092615680fb0bbed6b59d726721c39"
-dependencies = [
- "critical-section",
- "embedded-hal",
- "paste",
- "riscv-macros 0.1.0 (git+https://github.com/rust-embedded/riscv?branch=master)",
- "riscv-pac 0.2.0 (git+https://github.com/rust-embedded/riscv?branch=master)",
 ]
 
 [[package]]
@@ -83,7 +83,7 @@ dependencies = [
 [[package]]
 name = "riscv-macros"
 version = "0.1.0"
-source = "git+https://github.com/rust-embedded/riscv?branch=master#f92d7871f9092615680fb0bbed6b59d726721c39"
+source = "git+https://github.com/rust-embedded/riscv?branch=rvrt-patch#f16c833daf7074962db7f9e8070b4176b15f51c9"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -99,23 +99,22 @@ checksum = "8188909339ccc0c68cfb5a04648313f09621e8b87dc03095454f1a11f6c5d436"
 [[package]]
 name = "riscv-pac"
 version = "0.2.0"
-source = "git+https://github.com/rust-embedded/riscv?branch=master#f92d7871f9092615680fb0bbed6b59d726721c39"
+source = "git+https://github.com/rust-embedded/riscv?branch=rvrt-patch#f16c833daf7074962db7f9e8070b4176b15f51c9"
 
 [[package]]
 name = "riscv-rt"
 version = "0.13.0"
-source = "git+https://github.com/rust-embedded/riscv?branch=master#f92d7871f9092615680fb0bbed6b59d726721c39"
+source = "git+https://github.com/rust-embedded/riscv?branch=rvrt-patch#f16c833daf7074962db7f9e8070b4176b15f51c9"
 dependencies = [
- "riscv 0.12.1 (git+https://github.com/rust-embedded/riscv?branch=master)",
- "riscv-pac 0.2.0 (git+https://github.com/rust-embedded/riscv?branch=master)",
+ "riscv 0.12.0",
+ "riscv-pac 0.2.0 (git+https://github.com/rust-embedded/riscv?branch=rvrt-patch)",
  "riscv-rt-macros",
- "riscv-target-parser",
 ]
 
 [[package]]
 name = "riscv-rt-macros"
-version = "0.3.0"
-source = "git+https://github.com/rust-embedded/riscv?branch=master#f92d7871f9092615680fb0bbed6b59d726721c39"
+version = "0.2.2"
+source = "git+https://github.com/rust-embedded/riscv?branch=rvrt-patch#f16c833daf7074962db7f9e8070b4176b15f51c9"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -129,19 +128,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56c28492b1d8089a5b8f4b8bf57b81945e6ae2483a30592bf0456c8f9f7bec05"
 dependencies = [
  "critical-section",
- "riscv 0.12.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "riscv 0.12.1",
 ]
-
-[[package]]
-name = "riscv-target-parser"
-version = "0.1.0"
-source = "git+https://github.com/rust-embedded/riscv?branch=master#f92d7871f9092615680fb0bbed6b59d726721c39"
 
 [[package]]
 name = "riscv_semi"
 version = "0.1.0"
 dependencies = [
  "panic-halt",
+ "riscv 0.12.0",
  "riscv-rt",
  "riscv-semihosting",
 ]
